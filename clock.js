@@ -15,6 +15,7 @@ function drawFace(ctx,radius){
     ctx.beginPath();
     ctx.arc(0,0,radius,0, 2 * Math.PI);
     ctx.lineWidth = 5;
+    ctx.strokeStyle = "#33373f";
     ctx.stroke();
 
 }
@@ -22,7 +23,7 @@ function drawFace(ctx,radius){
 function drawNumbers(ctx,radius){
     var ang;
     var num;
-    ctx.font = radius * 0.15 + "px consolas";
+    ctx.font = radius * 0.10 + "px Trebuchet MS";
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
     for (num=1;num<13;num++){
@@ -64,8 +65,14 @@ function drawHand(ctx,pos,length,width){
     ctx.moveTo(0,0);
     ctx.rotate(pos);
     ctx.lineTo(0,-length);
+    ctx.fillStyle="#33373f";
+    ctx.stroke();
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,-length/10);
+    ctx.fillStyle="white";
     ctx.stroke();
     ctx.rotate(-pos);
+    ctx.fillStyle="#33373f";
 }
 
 setInterval(drawClock, 10);
